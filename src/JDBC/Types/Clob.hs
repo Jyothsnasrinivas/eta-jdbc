@@ -1,4 +1,18 @@
-module JDBC.Types.Clob where
+module JDBC.Types.Clob
+  ( freeClob,
+    getAsciiStreamClob,
+    getCharacterStreamClob,
+    getCharacterStreamClob2,
+    getSubStringClob,
+    lengthClob,
+    positionClob,
+    positionClob2,
+    setAsciiStreamClob,
+    setCharacterStreamClob,
+    setStringClob,
+    setStringClob2,
+    truncateClob)
+where
 
 import Java
 

@@ -1,4 +1,16 @@
-module JDBC.Types.Blob where
+module JDBC.Types.Blob
+ ( freeBlob,
+   getBinaryStreamBlob,
+   getBinaryStreamBlob2,
+   getBytesBlob,
+   lengthBlob,
+   positionBlob,
+   positionBlob2,
+   setBinaryStreamBlob,
+   setBytesBlob,
+   setBytesBlob2,
+   truncateBlob)
+where
 
 import Java
 

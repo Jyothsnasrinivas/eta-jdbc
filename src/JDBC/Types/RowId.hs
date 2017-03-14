@@ -1,10 +1,29 @@
 import JDBC.Types.RowId
+  (equalsRowId,
+   getBytesRowId2,
+   hashcodeRowId,
+   toStringRowId)
+where
 
 import Java
 
-foreign import java unsafe "@interface equals" equalsRowId :: Object -> Java RowId JBoolean
+foreign import java unsafe "@interface equals" equalsRowId_ :: Object -> Java RowId JBoolean
 
-foreign import java unsafe "@interface getBytes" getBytesRowId :: Java RowId JByteArray --TODO
+--Wrapper
+
+equalsRowId :: Object -> Java RowId JBoolean
+equalsRowId t = fmap fromJava (equalsRowId_ t)
+
+--End Wrapper
+
+foreign import java unsafe "@interface getBytes" getBytesRowId2_ :: Java RowId JByteArray
+
+--Wrapper
+
+getBytesRowId2 :: Java RowId [Byte]
+getBytesRowId2 = getBytesRowId2_
+
+--End Wrapper
 
 foreign import java unsafe "@interface hashcode" hashcodeRowId :: Java RowId Int
 
