@@ -50,6 +50,6 @@ foreign import java unsafe "@interface setBytes" setBytesBlob2_ ::
 setBytesBlob2 :: Int64 -> [Byte] -> Int -> Int -> Java Blob Int
 setBytesBlob2 t1 t2 = setBytesBlob2_ t1 (toJava t2)
 
-
+--End Wrapper
 
 foreign import java unsafe "@interface tuncate" truncateBlob :: Int64 -> Java Blob ()
