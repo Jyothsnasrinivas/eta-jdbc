@@ -176,3 +176,25 @@ foreign import java unsafe "@interface getWarnings" getWarningsResultSet :: Java
 foreign import java unsafe "@interface insertRow" insertRowResultSet :: Java ResultSet ()
 
 foreign import java unsafe "@interface isAfterLast" isAfterLastResultSet :: Java ResultSet Bool
+
+foreign import java unsafe "@interface isBeforeFirst" isBeforeFirstResultSet :: Java ResultSet Bool
+
+foreign import java unsafe "@interface isClosed" isClosedResultSet :: Java ResultSet Bool
+
+foreign import java unsafe "@interface isFirst" isFirstResultSet :: Java ResultSet Bool
+
+foreign import java unsafe "@interface isLast" isLastResultSet :: Java ResultSet Bool
+
+foreign import java unsafe "@interface last" lastResultSet :: Java ResultSet Bool
+
+foreign import java unsafe "@interface moveToCurrentRow" moveToCurrentRowResultSet :: Java ResultSet ()
+
+foreign import java unsafe "@interface moveToInserRow" moveToInserRowResultSet :: Java ResultSet ()
+
+foreign import java unsafe "@interface next" nextResultSet :: Java ResultSet Bool
+
+foreign import java unsafe "@interface previous" previousResultSet :: Java ResultSet Bool
+
+foreign import java unsafe "@interface refreshRow" refreshRowResultSet :: Java ResultSet ()
+
+foreign import java unsafe "@interface relative" relativeResultSet :: Int -> Java ResultSet Bool
