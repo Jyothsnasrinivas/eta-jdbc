@@ -1,4 +1,56 @@
 import JDBC.Types.Connection
+  (abortConnection,
+   clearWarningsConnection,
+   closeConnection,
+   commitConnection,
+   createArrayOfConnection,
+   createBlobConnection,
+   createClobConnection,
+   createNClobConnection,
+   createSQLXMLConnection,
+   createStatementConnection,
+   createStatementConnection2,
+   createStatementConnection3,
+   createStructConnection,
+   getAutoCommitConnection,
+   getCatalogConnection,
+   getClientInfoConnection,
+   getHoldablityConnection,
+   getMetaDataConnection,
+   getNetworkTimeoutConnection,
+   getSchemaConnection,
+   getTransactionIsolationConnection,
+   getTypeMapConnection,
+   getWarningsConnection,
+   isClosedConnection,
+   isReadOnlyConnection,
+   isValidConnection,
+   nativeSQLConnection,
+   prepareCallConnection,
+   prepareCallConnection2,
+   prepareCallConnection3,
+   prepareStatementConnection,
+   prepareStatementConnection2,
+   prepareStatementConnection3,
+   prepareStatementConnection4,
+   prepareStatementConnection5,
+   prepareStatementConnection6,
+   releaseSavepointConnection,
+   rollbackConnection,
+   rollbackConnection2,
+   setAutoCommitConnection,
+   setCatalogConnection,
+   setClientInfoConnection,
+   setClientInfoConnection2,
+   setHoldabilityConnection,
+   setNetworkTimeoutConnection,
+   setReadOnlyConnection,
+   setSavepointConnection,
+   setSavepointConnection2,
+   setSchemaConnection,
+   setTransactionIsolationConnection,
+   setTypeMapConnection)
+where
 
 import Java
 
@@ -29,8 +81,15 @@ Int -> Int -> Java Connection Statement
 foreign import java unsafe "@interface createStatement" createStatementConnection3 ::
 Int -> Int -> Int -> Java Connection Statement
 
-foreign import java unsafe "@interface createStruct" createStructConnection ::
+foreign import java unsafe "@interface createStruct" createStructConnection_ ::
   JString -> JObjectArray -> Java Connection Struct
+
+--Wrapper
+
+createStructConnection :: JString -> [Object] -> Java Connection Struct
+createStructConnection t1 t2 = createStructConnection_ t1 (toJava t2)
+
+--End Wrapper
 
 foreign import java unsafe "@interface getAutoCommit" getAutoCommitConnection :: Java Connection Bool
 
@@ -74,8 +133,15 @@ JString -> Java Connection PreparedStatement
 foreign import java unsafe "@interface prepareStatement" prepareStatementConnection2 ::
 JString -> Int -> Java Connection PreparedStatement
 
-foreign import java unsafe "@interface prepareStatement" prepareStatementConnection3 ::
+foreign import java unsafe "@interface prepareStatement" prepareStatementConnection3_ ::
 JString -> Int -> JIntArrray -> Java Connection PreparedStatement
+
+--Wrapper
+
+prepareStatementConnection3 :: JString -> Int -> [Int] -> Java Connection PreparedStatement
+prepareStatementConnection3 t1 t2 t3 = prepareStatementConnection3_ t1 t2 (toJava t3)
+
+--End Wrapper
 
 foreign import java unsafe "@interface prepareStatement" prepareStatementConnection4 ::
 JString -> Int -> Int -> Java Connection PreparedStatement
@@ -83,8 +149,15 @@ JString -> Int -> Int -> Java Connection PreparedStatement
 foreign import java unsafe "@interface prepareStatement" prepareStatementConnection5 ::
 JString -> Int -> Int -> Int -> Java Connection PreparedStatement
 
-foreign import java unsafe "@interface prepareStatement" prepareStatementConnection ::
+foreign import java unsafe "@interface prepareStatement" prepareStatementConnection6_ ::
 JString -> JStringArray -> Java Connection PreparedStatement
+
+--Wrapper
+
+prepareStatementConnection6 :: JString -> [JString] -> Java Connection PreparedStatement
+prepareStatementConnection6 t1 t2 = prepareStatementConnection6_ t1 (toJava t2)
+
+--End Wrapper
 
 foreign import java unsafe "@interface releaseSavepoint" releaseSavepointConnection :: Savepoint -> Java Connection ()
 
@@ -115,4 +188,11 @@ foreign import java unsafe "@interface setSchema" setSchemaConnection :: JString
 foreign import java unsafe "@interface setTransactionIsolation" setTransactionIsolationConnection ::
 Int -> Java Connection ()
 
-foreign import java unsafe "@interface setTypeMap" setTypeMapConnection :: Map JString (JClass b) -> Java Connection ()
+foreign import java unsafe "@interface setTypeMap" setTypeMapConnection_ :: Map JString (JClass b) -> Java Connection ()
+
+--Wrapper
+
+setTypeMapConnection :: [(JString, JClass b)] -> Java Connection ()
+setTypeMapConnection t = setTypeMapConnection_ (toJava t)
+
+--End Wrapper
