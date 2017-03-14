@@ -21,7 +21,7 @@ foreign import java unsafe "@interface getBytes" getBytesRowId2_ :: Java RowId J
 --Wrapper
 
 getBytesRowId2 :: Java RowId [Byte]
-getBytesRowId2 = getBytesRowId2_
+getBytesRowId2 = fmap fromJava (getBytesRowId2_)
 
 --End Wrapper
 

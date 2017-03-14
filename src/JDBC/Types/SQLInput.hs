@@ -1,4 +1,32 @@
 import JDBC.Types.SQLInput
+  ( readArraySQLInput,
+    readAsciiStreamSQLInput,
+    readBigDecimalSQLInput,
+    readBinaryStreamSQLInput,
+    readBlobSQLInput,
+    readBooleanSQLInput,
+    readByteSQLInput,
+    readBytesSQLInput2,
+    readCharacterStreamSQLInput,
+    readClobSQLInput,
+    readDateSQLInput,
+    readDoubleSQLInput,
+    readFloatSQLInput,
+    readIntSQLInput,
+    readLongSQLInput,
+    readNClobSQLInput,
+    readNStringSQLInput,
+    readObjectSQLInput,
+    readRefSQLInput,
+    readRowIdSQLInput,
+    readShortSQLInput,
+    readSQLXMLSQLInput,
+    readStringSQLInput,
+    readTimeSQLInput,
+    readTimestampSQLInput,
+    readURLSQLInput,
+    wasNullSQLInput)
+where
 
 import Java
 
@@ -12,11 +40,26 @@ foreign import java unsafe "@interface readBinaryStream" readBinaryStreamSQLInpu
 
 foreign import java unsafe "@interface readBlob" readBlobSQLInput :: Java SQLInput Blob
 
-foreign import java unsafe "@interface readBoolean" readBooleanSQLInput :: Java SQLInput JBoolean
+foreign import java unsafe "@interface readBoolean" readBooleanSQLInput_ :: Java SQLInput JBoolean
+
+--Wrapper
+
+readBooleanSQLInput :: Java SQLInput JBoolean
+readBooleanSQLInput = fmap fromJava (readBooleanSQLInput_)
+
+--End Wrapper
 
 foreign import java unsafe "@interface readByte" readByteSQLInput :: Java SQLInput JByte
 
-foreign import java unsafe "@interface readBytes" readBytesSQLInput :: Java SQLInput JByteArray -- TODO
+foreign import java unsafe "@interface readBytes" readBytesSQLInput2_ :: Java SQLInput JByteArray
+
+--Wrapper
+
+readBytesSQLInput2 :: Java SQLInput [Byte]
+readBytesSQLInput2 = fmap fromJava (readBytesSQLInput2_)
+
+--End Wrapper
+
 
 foreign import java unsafe "@interface readCharacterStream" readCharacterStreamSQLInput :: Java SQLInput Reader
 
@@ -54,4 +97,11 @@ foreign import java unsafe "@interface readTimestamp" readTimestampSQLInput :: J
 
 foreign import java unsafe "@interface readURL" readURLSQLInput :: Java SQLInput URL
 
-foreign import java unsafe "@interface wasNull" wasNullSQLInput :: Java SQLInput JBoolean
+foreign import java unsafe "@interface wasNull" wasNullSQLInput_ :: Java SQLInput JBoolean
+
+--Wrapper
+
+wasNullSQLInput :: Java SQLInput JBoolean
+wasNullSQLInput = fmap fromJava (wasNullSQLInput_)
+
+--End Wrapper
