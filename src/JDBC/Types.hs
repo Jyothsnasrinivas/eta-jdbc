@@ -35,7 +35,5 @@ data {-# CLASS "java.sql.Statement" #-} Statement = Statement (Object# Statement
 data {-# CLASS "java.sql.Struct" #-} Struct = Struct (Object# Struct)
   deriving Class
 
-data {-# CLASS "java.util.Byte[]" #-} ByteArray t = ByteArray (Object# (ByteArray t))
+data {-# CLASS "java.sql.ResultSet" #-} ResultSet = ResultSet (Object# ResultSet)
   deriving Class
-
-instance JArray (Byte t) (ByteArray t) --TODO
