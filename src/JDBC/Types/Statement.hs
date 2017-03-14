@@ -1,4 +1,47 @@
 import JDBC.Types.Statement
+  ( addBatchStatement,
+    cancelStatement,
+    clearBatchStatement,
+    clearWarningStatement,
+    closeStatement,
+    closeOnCompletionStatement,
+    executeStatement,
+    executeStatement2,
+    executeStatement3,
+    executeStatement4,
+    executeBatchStatement,
+    executeQueryStatement,
+    executeUpdateStatement,
+    executeUpdateStatement2,
+    executeUpdateStatement3,
+    executeUpdateStatement4,
+    getConnectionStatement,
+    getFetchSizeStatement,
+    getFetchDirectionStatement,
+    getGeneratedKeysStatement,
+    getMaxFieldSizeStatement,
+    getMaxRowsStatement,
+    getMoreResultsStatement,
+    getMoreResultsStatement2,
+    getQueryTimeoutStatement,
+    getResultSetStatement,
+    getResultConcurrencySetStatement,
+    getResultSetHoldabilityStatement,
+    getResultSetTypeStatement,
+    getUpdateCountStatement,
+    getWarningsStatement,
+    isClosedStatement,
+    isClosedOnCompletionStatement,
+    isPoolableStatement,
+    setCursorNameStatement,
+    setEscapeProcessingStatement,
+    setFetchDirectionStatement,
+    setFetchSizeStatement,
+    setMaxFieldSizeStatement,
+    setMaxRowsStatement,
+    setPoolableStatement,
+    setQueryTimeoutStatement)
+where
 
 import Java
 
@@ -18,11 +61,32 @@ foreign import java unsafe "@interface execute" executeStatement :: JString -> J
 
 foreign import java unsafe "@interface execute" executeStatement2 :: JString -> Int -> Java Statement Bool
 
-foreign import java unsafe "@interface execute" executeStatement3 :: JString -> Int -> IntArray -> Java Statement Bool
+foreign import java unsafe "@interface execute" executeStatement3_ :: JString -> Int -> JIntArray -> Java Statement Bool
 
-foreign import java unsafe "@interface execute" executeStatement4 :: JString -> JStringArray -> Java Statement Bool
+--Wrapper
 
-foreign import java unsafe "@interface executeBatch" executeBatchStatement :: Java Statement IntArray --TODO
+executeStatement3 :: JString -> Int -> [Int] -> Java Statement Bool
+executeStatement3 t1 t2 t3 = executeStatement3_ t1 t2 (toJava t3)
+
+--End Wrapper
+
+foreign import java unsafe "@interface execute" executeStatement4_ :: JString -> JStringArray -> Java Statement Bool
+
+--Wrapper
+
+executeStatement4 :: JString -> [String] -> Java Statement Bool
+executeStatement4 t1 t2 = executeStatement4_ t1 (toJava t2)
+
+--End Wrapper
+
+foreign import java unsafe "@interface executeBatch" executeBatchStatement_ :: Java Statement JIntArray --TODO
+
+--Wrapper
+
+executeBatchStatement :: Java Statement [Int]
+executeBatchStatement = fmap fromJava (executeBatchStatement_)
+
+--End Wrapper
 
 foreign import java unsafe "@interface executeQuery" executeQueryStatement :: JString -> Java Statement ResultSet
 
@@ -30,9 +94,23 @@ foreign import java unsafe "@interface executeUpdate" executeUpdateStatement :: 
 
 foreign import java unsafe "@interface executeUpdate" executeUpdateStatement2 :: JString -> Int -> Java Statement Int
 
-foreign import java unsafe "@interface executeUpdate" executeUpdateStatement3 :: JString -> IntArray -> Java Statement Int
+foreign import java unsafe "@interface executeUpdate" executeUpdateStatement3_ :: JString -> JIntArray -> Java Statement Int
 
-foreign import java unsafe "@interface executeUpdate" executeUpdateStatement4 :: JString -> JStringArray -> Java Statement Int
+--Wrapper
+
+executeUpdateStatement3 :: JString -> [Int] -> Java Statement Int
+executeUpdateStatement3 t1 t2 = executeUpdateStatement3_ t1 (toJava t2)
+
+--End Wrapper
+
+foreign import java unsafe "@interface executeUpdate" executeUpdateStatement4_ :: JString -> JStringArray -> Java Statement Int
+
+--Wrapper
+
+executeUpdateStatement4 :: JString -> [String] -> Java Statement Int
+executeUpdateStatement4 t1 t2 = executeUpdateStatement4_ t1 (toJava t2)
+
+--End Wrapper
 
 foreign import java unsafe "@interface getConnection" getConnectionStatement :: Java Statement Connection
 
@@ -82,6 +160,6 @@ foreign import java unsafe "@interface setMaxFieldSize" setMaxFieldSizeStatement
 
 foreign import java unsafe "@interface setMaxRows" setMaxRowsStatement :: Int -> Java Statement ()
 
-foreign import java unsafe "@interface setPoolable" setMaxFieldSizeStatement :: Bool -> Java Statement ()
+foreign import java unsafe "@interface setPoolable" setPoolableStatement :: Bool -> Java Statement ()
 
 foreign import java unsafe "@interface setQueryTimeout" setQueryTimeoutStatement :: Int -> Java Statement ()
