@@ -6,6 +6,9 @@ foreign import java unsafe "@interface getBaseTypeName" getBaseTypeNameRef :: Ja
 
 foreign import java unsafe "@interface getObject" getObjectRef :: Java Ref Object
 
-foreign import java unsafe "@interface getObject" getObjectRef2 :: Map JString (JClass b) -> Java Ref Object
+foreign import java unsafe "@interface getObject" getObjectRef2_ :: Map JString (JClass b) -> Java Ref Object
+
+getObjectRef2 :: [(JString, JClass b)] -> Java Ref Object
+getObjectRef2 t = getObjectRef2_ (toJava t)
 
 foreign import java unsafe "@interface setObject" setObjectRef :: Object -> Java Ref ()
