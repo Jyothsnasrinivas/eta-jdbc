@@ -37,3 +37,6 @@ data {-# CLASS "java.sql.Struct" #-} Struct = Struct (Object# Struct)
 
 data {-# CLASS "java.sql.ResultSet" #-} ResultSet = ResultSet (Object# ResultSet)
   deriving Class
+
+data {-# CLASS "java.sql.ResultSetMetaData" #-} ResultSetMetaData = ResultSetMetaData (Object# ResultSetMetaData)
+  deriving Class

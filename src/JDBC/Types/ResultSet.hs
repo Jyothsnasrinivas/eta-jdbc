@@ -189,7 +189,7 @@ where
 
 import Java
 
-foreign import java unsafe "@interface absolute" absoluteResultSet :: Int -> Java Array Bool
+foreign import java unsafe "@interface absolute" absoluteResultSet :: Int -> Java ResultSet Bool
 
 foreign import java unsafe "@interface afterLast" afterLastResultSet :: Java ResultSet ()
 
