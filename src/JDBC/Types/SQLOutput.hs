@@ -1,4 +1,31 @@
 import JDBC.Types.SQLOutput
+  ( writeArraySQLOutput,
+    writeAsciiStreamSQLOutput,
+    writeBigDecimalSQLOutput,
+    writeBlobSQLOutput,
+    writeBooleanSQLOutput,
+    writeByteSQLOutput,
+    writeBytesSQLOutput,
+    writeCharacterStreamSQLOutput,
+    writeClobSQLOutput,
+    writeDateSQLOutput,
+    writeDoubleSQLOutput,
+    writeFloatSQLOutput,
+    writeIntSQLOutput,
+    writeLongSQLOutput,
+    writeNClobSQLOutput,
+    writeNStringSQLOutput,
+    writeObjectSQLOutput,
+    writeRefSQLOutput,
+    writeRowIdSQLOutput,
+    writeShortSQLOutput,
+    writeSQLXMLSQLOutput,
+    writeStringSQLOutput,
+    writeStructSQLOutput,
+    writeTimeSQLOutput,
+    writeTimeStampSQLOutput,
+    writeURLSQLOutput)
+where
 
 import Java
 
@@ -14,7 +41,14 @@ foreign import java unsafe "@interface writeBoolean" writeBooleanSQLOutput :: Bo
 
 foreign import java unsafe "@interface writeByte" writeByteSQLOutput :: Byte -> Java SQLOutput ()
 
-foreign import java unsafe "@interface writeBytes" writeBytesSQLOutput :: JByteArray -> Java SQLOutput ()
+foreign import java unsafe "@interface writeBytes" writeBytesSQLOutput_ :: JByteArray -> Java SQLOutput ()
+
+--Wrapper
+
+writeBytesSQLOutput :: [Byte] -> Java SQLOutput ()
+writeBytesSQLOutput t = writeBytesSQLOutput_ (toJava t)
+
+--End Wrapper
 
 foreign import java unsafe "@interface writeCharacterStream" writeCharacterStreamSQLOutput :: Reader -> Java SQLOutput ()
 
@@ -44,7 +78,7 @@ foreign import java unsafe "@interface writeShort" writeShortSQLOutput :: Short 
 
 foreign import java unsafe "@interface writeSQLXML" writeSQLXMLSQLOutput :: SQLSML -> Java SQLOutput ()
 
-foreign import java unsafe "@interface writeString" writeNClobSQLOutput :: JString -> Java SQLOutput ()
+foreign import java unsafe "@interface writeString" writeStringSQLOutput :: JString -> Java SQLOutput ()
 
 foreign import java unsafe "@interface writeStruct" writeStructSQLOutput :: Struct -> Java SQLOutput ()
 
