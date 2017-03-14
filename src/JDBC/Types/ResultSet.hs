@@ -198,3 +198,149 @@ foreign import java unsafe "@interface previous" previousResultSet :: Java Resul
 foreign import java unsafe "@interface refreshRow" refreshRowResultSet :: Java ResultSet ()
 
 foreign import java unsafe "@interface relative" relativeResultSet :: Int -> Java ResultSet Bool
+
+foreign import java unsafe "@interface rowDeleted" rowDeletedRowResultSet :: Java ResultSet Bool
+
+foreign import java unsafe "@interface rowInserted" rowInsertedRowResultSet :: Java ResultSet Bool
+
+foreign import java unsafe "@interface rowUpdated" rowUpdatedRowResultSet :: Java ResultSet Bool
+
+foreign import java unsafe "@interface setFetchDirect" setFetchDirectionResultSet :: Int -> Java ResultSet ()
+
+foreign import java unsafe "@interface setFetchSize" setFetchSizeResultSet :: Int -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateArray" updateArrayResultSet :: Int -> Array -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateArray" updateArrayResultSet2 :: JString -> Array -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateAsciiStream" updateAsciiStreamResultSet :: Int -> InputStream -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateAsciiStream" updateAsciiStreamResultSet2 :: Int -> InputStream -> Int -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateAsciiStream" updateAsciiStreamResultSet3 :: Int -> InputStream -> Int64 -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateAsciiStream" updateAsciiStreamResultSet4 :: JString -> InputStream -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateAsciiStream" updateAsciiStreamResultSet5 :: JString -> InputStream -> Int -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateAsciiStream" updateAsciiStreamResultSet6 :: JString -> InputStream -> Int64 -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateBigDecimal" updateBigDecimalResultSet :: Int -> BigDecimal -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateBigDecimal" updateBigDecimalResultSet2 :: JString -> BigDecimal -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateBinaryStream" updateBinaryStreamResultSet :: Int -> InputStream -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateBinaryStream" updateBinaryStreamResultSet2 :: Int -> InputStream -> Int -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateBinaryStream" updateBinaryStreamResultSet3 :: Int -> InputStream -> Int64 -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateBinaryStream" updateBinaryStreamResultSet4 :: JString -> InputStream -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateBinaryStream" updateBinaryStreamResultSet5 :: JString -> InputStream -> Int -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateBinaryStream" updateBinaryStreamResultSet6 :: JString -> InputStream -> Int64 -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateBlob" updateBlobResultSet :: Int -> Blob -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateBlob" updateBlobResultSet2 :: Int -> InputStream -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateBlob" updateBlobResultSet3 :: Int -> InputStream -> Int64 -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateBlob" updateBlobResultSet4 :: JString -> Blob -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateBlob" updateBlobResultSet5 :: JString -> InputStream -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateBlob" updateBlobResultSet6 :: JString -> InputStream -> Int64 -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateBoolean" updateBooleanResultSet :: Int -> Bool -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateBoolean" updateBooleanResultSet2 :: JString -> Bool -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateByte" updateByteResultSet :: Int -> Byte -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateByte" updateByteResultSet2 :: JString -> Byte -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateBytes" updateBytesResultSet :: Int -> JByteArray -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateBytes" updateBytesResultSet2 :: JString -> JByteArray -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateCharacterStream" updateCharacterStreamResultSet :: Int -> Reader -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateCharacterStream" updateCharacterStreamResultSet2 :: Int -> Reader -> Int -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateCharacterStream" updateCharacterStreamResultSet3 :: Int -> Reader -> Int64 -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateCharacterStream" updateCharacterStreamResultSet4 :: JString -> Reader -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateCharacterStream" updateCharacterStreamResultSet5 :: JString -> Reader -> Int -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateCharacterStream" updateCharacterStreamResultSet6 :: JString -> Reader -> Int64 -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateClob" updateClobResultSet :: Int -> Clob -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateClob" updateClobResultSet2 :: Int -> Reader -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateClob" updateClobResultSet3 :: Int -> Reader -> Int64 -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateClob" updateClobResultSet4 :: JString -> Clob -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateClob" updateClobResultSet5 :: JString -> Reader -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateClob" updateClobResultSet6 :: JString -> Reader -> Int64 -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateDate" updateDateResultSet :: Int -> Date -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateDate" updateDateResultSet2 :: JString -> Date -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateDouble" updateDoubleResultSet :: Int -> Double -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateDouble" updateDoubleResultSet2 :: JString -> Double -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateFloat" updateFloatResultSet :: Int -> Float -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateFloat" updateFloatResultSet2 :: JString -> Float -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateInt" updateIntResultSet :: Int -> Int -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateInt" updateIntResultSet2 :: JString -> Int -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateLong" updateLongResultSet :: Int -> Int64 -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateLong" updateLongResultSet :: JString -> Int64 -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateNCharacterStream" updateNCharacterStreamResultSet :: Int -> Reader -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateNCharacterStream" updateNCharacterStreamResultSet2 :: Int -> Reader -> Int64 -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateNCharacterStream" updateNCharacterStreamResultSet3 :: JString -> Reader -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateNCharacterStream" updateNCharacterStreamResultSet4 :: JString -> Reader -> Int64 -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateNClob" updateNClobResultSet :: Int -> NClob -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateNClob" updateNClobResultSet2 :: Int -> Reader -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateNClob" updateNClobResultSet3 :: Int -> Reader -> Int64 -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateNClob" updateNClobResultSet4 :: JString -> NClob -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateNClob" updateNClobResultSet5 :: JString -> Reader -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateNClob" updateNClobResultSet6 :: JString -> Reader -> Int64 -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateNString" updateNStringResultSet :: Int -> JString -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateNString" updateNStringResultSet2 :: JString -> JString -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateNull" updateNullResultSet :: Int -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateNull" updateNullResultSet2 :: JString -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateObject" updateObjectResultSet :: Int -> Object -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateObject" updateObjectResultSet2 :: Int -> Object -> Int -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateObject" updateObjectResultSet3 :: JString -> Object -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateObject" updateObjectResultSet4 :: JString -> Object -> Int -> Java ResultSet ()
