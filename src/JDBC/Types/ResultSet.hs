@@ -305,7 +305,7 @@ foreign import java unsafe "@interface updateBytes" updateBytesResultSet2_ :: JS
 updateBytesResultSet2 :: JString -> [Byte] -> Java ResultSet ()
 updateBytesResultSet2 t1 t2 = updateBytesResultSet2_ t1 (toJava t2)
 
---End Wrapper
+-- End Wrapper
 
 foreign import java unsafe "@interface updateCharacterStream" updateCharacterStreamResultSet :: Int -> Reader -> Java ResultSet ()
 
