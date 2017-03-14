@@ -43,3 +43,6 @@ data {-# CLASS "java.sql.ResultSetMetaData" #-} ResultSetMetaData = ResultSetMet
 
 data {-# CLASS "java.sql.Time" #-} Time = Time (Object# Time)
   deriving Class
+
+data {-# CLASS "java.sql.Timestamp" #-} Timestamp = Timestamp (Object# Timestamp)
+  deriving Class
