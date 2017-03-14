@@ -344,3 +344,35 @@ foreign import java unsafe "@interface updateObject" updateObjectResultSet2 :: I
 foreign import java unsafe "@interface updateObject" updateObjectResultSet3 :: JString -> Object -> Java ResultSet ()
 
 foreign import java unsafe "@interface updateObject" updateObjectResultSet4 :: JString -> Object -> Int -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateRef" updateRefResultSet :: Int -> Ref -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateRef" updateRefResultSet2 :: JString -> Ref -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateRow" updateRowResultSet :: Java ResultSet ()
+
+foreign import java unsafe "@interface updateRowId" updateRowIdResultSet :: Int -> RowId -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateRowId" updateRowIdResultSet2 :: JString -> RowId -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateShort" updateShortResultSet :: Int -> Short -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateShort" updateShortResultSet2 :: JString -> Short -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateSQLXML" updateSQLXMLResultSet :: Int -> SQLXML -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateSQLXML" updateSQLXMLResultSet2 :: JString -> SQLXML -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateString" updateStringResultSet :: Int -> JString -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateString" updateStringResultSet2 :: JString -> JString -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateTime" updateTimeResultSet :: Int -> Time -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateTime" updateTimeResultSet2 :: JString -> Time -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateTimestamp" updateTimestampResultSet :: Int -> Timestamp -> Java ResultSet ()
+
+foreign import java unsafe "@interface updateTimestamp" updateTimestampResultSet2 :: JString -> Timestamp -> Java ResultSet ()
+
+foreign import java unsafe "@interface wasNull" updateTimestampResultSet :: Java ResultSet Bool
