@@ -50,9 +50,23 @@ foreign import java unsafe "@interface getByte" getByteResultSet :: Int -> Java 
 
 foreign import java unsafe "@interface getByte" getByteResultSet2 :: JString -> Java ResultSet Byte
 
-foreign import java unsafe "@interface getBytes" getBytesResultSet :: Int -> Java ResultSet JByteArray
+foreign import java unsafe "@interface getBytes" getBytesResultSet_ :: Int -> Java ResultSet JByteArray
 
-foreign import java unsafe "@interface getBytes" getBytesResultSet2 :: JString -> Java ResultSet JByteArray
+--Wrapper
+
+getBytesResultSet :: Int -> Java ResultSet [Byte]
+getBytesResultSet t = fmap fromJava (getBytesResultSet_ t)
+
+--End Wrapper
+
+foreign import java unsafe "@interface getBytes" getBytesResultSet2_ :: JString -> Java ResultSet JByteArray
+
+--Wrapper
+
+getBytesResultSet2 :: JString -> Java ResultSet [Byte]
+getBytesResultSet2 t = fmap fromJava (getBytesResultSet2_ t)
+
+--End Wrapper
 
 foreign import java unsafe "@interface getCharacterStream" getCharacterStreamResultSet :: Int -> Java ResultSet Reader
 
@@ -111,15 +125,29 @@ foreign import java unsafe "@interface getObject" getObjectResultSet :: Int -> J
 foreign import java unsafe "@interface getObject" getObjectResultSet2 :: (t <: Object)
                                                                       => Int -> Class t -> Java ResultSet t
 
-foreign import java unsafe "@interface getObject" getObjectResultSet3 :: Int -> Map JString (JClass b)
+foreign import java unsafe "@interface getObject" getObjectResultSet3_ :: Int -> Map JString (JClass b)
                                                                       -> Java ResultSet Object
+
+--Wrapper
+
+getObjectResultSet3 :: Int -> [(JString, JClass b)] -> Java ResultSet Object
+getObjectResultSet3 t1 t2 = getObjectResultSet3_ t1 (toJava t2)
+
+--End Wrapper
 
 foreign import java unsafe "@interface getObject" getObjectResultSet4 :: JString -> Java ResultSet Object
 
 foreign import java unsafe "@interface getObject" getObjectResultSet5 :: (t <: Object)
                                                                       => JString -> JClass t -> Java ResultSet t
 
-foreign import java unsafe "@interface getObject" getObjectResultSet6 :: JString -> Map JString (JClass b) -> Java ResultSet Object
+foreign import java unsafe "@interface getObject" getObjectResultSet6_ :: JString -> Map JString (JClass b) -> Java ResultSet Object
+
+--Wrapper
+
+getObjectResultSet6 :: JString -> [(JString, JClass b)] -> Java ResultSet Object
+getObjectResultSet6 t1 t2 = getObjectResultSet6_ t1 (toJava t2)
+
+--End Wrapper
 
 foreign import java unsafe "@interface getRef" getRefResultSet :: Int -> Java ResultSet Ref
 
@@ -261,9 +289,23 @@ foreign import java unsafe "@interface updateByte" updateByteResultSet :: Int ->
 
 foreign import java unsafe "@interface updateByte" updateByteResultSet2 :: JString -> Byte -> Java ResultSet ()
 
-foreign import java unsafe "@interface updateBytes" updateBytesResultSet :: Int -> JByteArray -> Java ResultSet ()
+foreign import java unsafe "@interface updateBytes" updateBytesResultSet_ :: Int -> JByteArray -> Java ResultSet ()
 
-foreign import java unsafe "@interface updateBytes" updateBytesResultSet2 :: JString -> JByteArray -> Java ResultSet ()
+--Wrapper
+
+updateBytesResultSet :: Int -> [Byte] -> Java ResultSet ()
+updateBytesResultSet t1 t2 = updateBytesResultSet_ t1 (toJava t2)
+
+--End Wrapper
+
+foreign import java unsafe "@interface updateBytes" updateBytesResultSet2_ :: JString -> JByteArray -> Java ResultSet ()
+
+--Wrapper
+
+updateBytesResultSet2 :: JString -> [Byte] -> Java ResultSet ()
+updateBytesResultSet2 t1 t2 = updateBytesResultSet2_ t1 (toJava t2)
+
+--End Wrapper
 
 foreign import java unsafe "@interface updateCharacterStream" updateCharacterStreamResultSet :: Int -> Reader -> Java ResultSet ()
 
