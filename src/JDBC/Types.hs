@@ -49,3 +49,6 @@ data {-# CLASS "java.sql.Timestamp" #-} Timestamp = Timestamp (Object# Timestamp
 
 data {-# CLASS "java.sql.Connection" #-} Connection = Connection (Object# Connection)
   deriving Class
+
+data {-# CLASS "java.sql.Savepoint" #-} Savepoint = Savepoint (Object# Savepoint)
+  deriving Class
