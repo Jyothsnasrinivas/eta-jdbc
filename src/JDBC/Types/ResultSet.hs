@@ -1,4 +1,191 @@
 import JDBC.Types.ResultSet
+  ( absoluteResultSet,
+    afterLastResultSet,
+    beforeFirstResultSet,
+    cancelRowUpdatesResultSet,
+    clearWarningsResultSet,
+    closeResultSet,
+    deleteRowResultSet,
+    findColumnResultSet,
+    firstResultSet,
+    getArrayResultSet,
+    getArrayResultSet2,
+    getAsciiStreamResultSet,
+    getAsciiStreamResultSet2,
+    getBigDecimalResultSet,
+    getBigDecimalResultSet2,
+    getBigDecimalResultSet3,
+    getBigDecimalResultSet4,
+    getBinaryStreamResultSet,
+    getBinaryStreamResultSet2,
+    getBlobResultSet,
+    getBlobResultSet2,
+    getBooleanResultSet,
+    getBooleanResultSet2,
+    getByteResultSet,
+    getByteResultSet2,
+    getBytesResultSet,
+    getBytesResultSet2,
+    getCharacterStreamResultSet,
+    getCharacterStreamResultSet2,
+    getClobResultSet,
+    getClobResultSet2,
+    getConcurrencyResultSet,
+    getCursorNameResultSet,
+    getDateResultSet,
+    getDateResultSet2,
+    getDoubleResultSet,
+    getDoubleResultSet2,
+    getFetchDirectionResultSet,
+    getFetchSizeResultSet,
+    getLongResultSet,
+    getLongResultSet2,
+    getFloatResultSet,
+    getFloatResultSet2,
+    getHoldabilityResultSet,
+    getIntResultSet,
+    getIntResultSet2,
+    getNCharaterStreamResultSet,
+    getNCharaterStreamResultSet2,
+    getNClobResultSet,
+    getNClobResultSet2,
+    getNStringResultSet,
+    getNStringResultSet2,
+    getObjectResultSet,
+    getObjectResultSet2,
+    getObjectResultSet3,
+    getObjectResultSet4,
+    getObjectResultSet5,
+    getObjectResultSet6,
+    getRefResultSet,
+    getRefResultSet2,
+    getRowResultSet,
+    getRowIdResultSet,
+    getRowIdResultSet2,
+    getShortResultSet,
+    getShortResultSet2,
+    getSQLXMLResultSet,
+    getSQLXMLResultSet2,
+    getStatementResultSet,
+    getStringResultSet,
+    getStringResultSet2,
+    getTimeResultSet,
+    getTimeResultSet2,
+    getTimeResultSet3,
+    getTimeResultSet4,
+    getTimestampResultSet,
+    getTimestampResultSet2,
+    getTimestampResultSet3,
+    getTimestampResultSet4,
+    getTypeResultSet,
+    getUnicodeStreamResultSet,
+    getUnicodeStreamResultSet2,
+    getURLResultSet,
+    getURLResultSet2,
+    getWarningsResultSet,
+    insertRowResultSet,
+    isAfterLastResultSet,
+    isBeforeFirstResultSet,
+    isClosedResultSet,
+    isFirstResultSet,
+    isLastResultSet,
+    lastResultSet,
+    moveToInserRowResultSet,
+    moveToCurrentRowResultSet,
+    nextResultSet,
+    previousResultSet,
+    refreshRowResultSet,
+    relativeResultSet,
+    rowDeletedRowResultSet,
+    rowInsertedRowResultSet,
+    rowUpdatedRowResultSet,
+    setFetchSizeResultSet,
+    setFetchDirectionResultSet,
+    updateArrayResultSet,
+    updateArrayResultSet2,
+    updateAsciiStreamResultSet,
+    updateAsciiStreamResultSet2,
+    updateAsciiStreamResultSet3,
+    updateAsciiStreamResultSet4,
+    updateAsciiStreamResultSet5,
+    updateAsciiStreamResultSet6,
+    updateBigDecimalResultSet,
+    updateBigDecimalResultSet2,
+    updateBinaryStreamResultSet,
+    updateBinaryStreamResultSet2,
+    updateBinaryStreamResultSet3,
+    updateBinaryStreamResultSet4,
+    updateBinaryStreamResultSet5,
+    updateBinaryStreamResultSet6,
+    updateBlobResultSet,
+    updateBlobResultSet2,
+    updateBlobResultSet3,
+    updateBlobResultSet4,
+    updateBlobResultSet5,
+    updateBlobResultSet6,
+    updateByteResultSet,
+    updateByteResultSet2,
+    updateBytesResultSet,
+    updateBytesResultSet2,
+    updateBooleanResultSet,
+    updateBooleanResultSet2,
+    updateCharacterStreamResultSet,
+    updateCharacterStreamResultSet2,
+    updateCharacterStreamResultSet3,
+    updateCharacterStreamResultSet4,
+    updateCharacterStreamResultSet5,
+    updateCharacterStreamResultSet6,
+    updateClobResultSet,
+    updateClobResultSet2,
+    updateClobResultSet3,
+    updateClobResultSet4,
+    updateClobResultSet5,
+    updateClobResultSet6,
+    updateDateResultSet,
+    updateDateResultSet2,
+    updateDoubleResultSet,
+    updateDoubleResultSet2,
+    updateFloatResultSet,
+    updateFloatResultSet2,
+    updateIntResultSet,
+    updateIntResultSet2,
+    updateLongResultSet,
+    updateLongResultSet2,
+    updateNCharacterStreamResultSet,
+    updateNCharacterStreamResultSet2,
+    updateNCharacterStreamResultSet3,
+    updateNCharacterStreamResultSet4,
+    updateNClobResultSet,
+    updateNClobResultSet2,
+    updateNClobResultSet3,
+    updateNClobResultSet4,
+    updateNClobResultSet5,
+    updateNClobResultSet6,
+    updateNStringResultSet,
+    updateNStringResultSet2,
+    updateNullResultSet,
+    updateNullResultSet2,
+    updateObjectResultSet,
+    updateObjectResultSet2,
+    updateObjectResultSet3,
+    updateObjectResultSet4,
+    updateRefResultSet,
+    updateRefResultSet2,
+    updateRowResultSet,
+    updateRowIdResultSet,
+    updateRowIdResultSet2,
+    updateShortResultSet,
+    updateShortResultSet2,
+    updateSQLXMLResultSet,
+    updateSQLXMLResultSet2,
+    updateStringResultSet,
+    updateStringResultSet2,
+    updateTimeResultSet,
+    updateTimeResultSet2,
+    updateTimestampResultSet,
+    updateTimestampResultSet2,
+    wasNullResultSet)
+where
 
 import Java
 
@@ -40,7 +227,9 @@ foreign import java unsafe "@interface getBinaryStream" getBinaryStreamResultSet
 
 foreign import java unsafe "@interface getBinaryStream" getBinaryStreamResultSet2 :: JString -> Java ResultSet InputStream
 
-foreign import java unsafe "@interface getBlob" getBlobResultSet :: JString -> Java ResultSet Blob
+foreign import java unsafe "@interface getBlob" getBlobResultSet :: Int -> Java ResultSet Blob
+
+foreign import java unsafe "@interface getBlob" getBlobResultSet2 :: JString -> Java ResultSet Blob
 
 foreign import java unsafe "@interface getBoolean" getBooleanResultSet :: Int -> Java ResultSet Bool
 
@@ -94,7 +283,7 @@ foreign import java unsafe "@interface getFetchSize" getFetchSizeResultSet :: Ja
 
 foreign import java unsafe "@interface getFloat" getFloatResultSet :: Int -> Java ResultSet Float
 
-foreign import java unsafe "@interface getFloat" getFloatResultSet :: JString -> Java ResultSet Float
+foreign import java unsafe "@interface getFloat" getFloatResultSet2 :: JString -> Java ResultSet Float
 
 foreign import java unsafe "@interface getHoldability" getHoldabilityResultSet :: Java ResultSet Int
 
@@ -104,7 +293,7 @@ foreign import java unsafe "@interface getInt" getIntResultSet2 :: JString -> Ja
 
 foreign import java unsafe "@interface getLong" getLongResultSet :: Int -> Java ResultSet Int64
 
-foreign import java unsafe "@interface getLong" getLongResultSet :: JString -> Java ResultSet Int64
+foreign import java unsafe "@interface getLong" getLongResultSet2 :: JString -> Java ResultSet Int64
 
 foreign import java unsafe "@interface getMetaData" getIntResultSet :: Java ResultSet ResultMetaData
 
@@ -349,7 +538,7 @@ foreign import java unsafe "@interface updateInt" updateIntResultSet2 :: JString
 
 foreign import java unsafe "@interface updateLong" updateLongResultSet :: Int -> Int64 -> Java ResultSet ()
 
-foreign import java unsafe "@interface updateLong" updateLongResultSet :: JString -> Int64 -> Java ResultSet ()
+foreign import java unsafe "@interface updateLong" updateLongResultSet2 :: JString -> Int64 -> Java ResultSet ()
 
 foreign import java unsafe "@interface updateNCharacterStream" updateNCharacterStreamResultSet :: Int -> Reader -> Java ResultSet ()
 
@@ -417,4 +606,4 @@ foreign import java unsafe "@interface updateTimestamp" updateTimestampResultSet
 
 foreign import java unsafe "@interface updateTimestamp" updateTimestampResultSet2 :: JString -> Timestamp -> Java ResultSet ()
 
-foreign import java unsafe "@interface wasNull" updateTimestampResultSet :: Java ResultSet Bool
+foreign import java unsafe "@interface wasNull" wasNullResultSet :: Java ResultSet Bool
