@@ -52,3 +52,9 @@ data {-# CLASS "java.sql.Connection" #-} Connection = Connection (Object# Connec
 
 data {-# CLASS "java.sql.Savepoint" #-} Savepoint = Savepoint (Object# Savepoint)
   deriving Class
+
+data {-# CLASS "java.sql.SQLWarning" #-} SQLWarning = SQLWarning (Object# SQLWarning)
+  deriving Class
+
+data {-# CLASS "java.sql.DatabaseMetaData" #-} DatabaseMetaData = DatabaseMetaData (Object# DatabaseMetaData)
+  deriving Class
