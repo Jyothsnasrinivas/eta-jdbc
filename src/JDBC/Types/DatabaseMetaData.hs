@@ -300,3 +300,39 @@ Java DatabaseMetaData Bool
 
 foreign import java unsafe "@interface storeUpperCaseQuotedIdentifiers" storeUpperCaseQuotedIdentifiersDatabaseMetaData ::
 Java DatabaseMetaData Bool
+
+foreign import java unsafe "@interface supportsAlterTableWithAddColumn" supportsAlterTableWithAddColumnDatabaseMetaData ::
+Java DatabaseMetaData Bool
+
+foreign import java unsafe "@interface supportsAlterTableWithDropColumn" supportsAlterTableWithDropColumnDatabaseMetaData ::
+Java DatabaseMetaData Bool
+
+foreign import java unsafe "@interface supportsANSI92EntryLevelSQL" supportsANSI92EntryLevelSQLDatabaseMetaData ::
+Java DatabaseMetaData Bool
+
+foreign import java unsafe "@interface supportsANSI92FullSQL" supportsANSI92FullSQLDatabaseMetaData ::
+Java DatabaseMetaData Bool
+
+foreign import java unsafe "@interface supportsANSI92IntermediateSQL" supportsANSI92IntermediateSQLDatabaseMetaData ::
+Java DatabaseMetaData Bool
+
+foreign import java unsafe "@interface supportsBatchUpdates" supportsBatchUpdatesDatabaseMetaData ::
+Java DatabaseMetaData Bool
+
+foreign import java unsafe "@interface supportsCatalogsInDataManipulation" supportsCatalogsInDataManipulationDatabaseMetaData ::
+Java DatabaseMetaData Bool
+
+foreign import java unsafe "@interface supportsCatalogsInIndexDefinition" supportsCatalogsInIndexDefinitionDatabaseMetaData ::
+Java DatabaseMetaData Bool
+
+foreign import java unsafe "@interface supportsCatalogsInPrivilegeDefinitions" supportsCatalogsInPrivilegeDefinitionsDatabaseMetaData ::
+Java DatabaseMetaData Bool
+
+foreign import java unsafe "@interface supportsCatalogsInProcedureCalls" supportsCatalogsInProcedureCallsDatabaseMetaData ::
+Java DatabaseMetaData Bool
+
+foreign import java unsafe "@interface supportsCatalogsInTableDefinitions" supportsCatalogsInTableDefinitionsDatabaseMetaData ::
+Java DatabaseMetaData Bool
+
+foreign import java unsafe "@interface supportsColumnAliasing" supportsColumnAliasingDatabseMetaData ::
+Java DatabaseMetaData Bool
