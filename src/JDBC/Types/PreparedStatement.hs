@@ -55,8 +55,15 @@ Int -> Bool -> Java PreparedStatement ()
 foreign import java unsafe "@interface setByte" setBytePreparedStatement ::
 Int -> Byte -> Java PreparedStatement ()
 
-foreign import java unsafe "@interface setBytes" setBytesPreparedStatement ::
+foreign import java unsafe "@interface setBytes" setBytesPreparedStatement_ ::
 Int -> JByteArray -> Java PreparedStatement ()
+
+--Wrapper
+
+setBytesPreparedStatement :: Int -> [Byte] -> Java PreparedStatement ()
+setBytesPreparedStatement t1 t2 = setBytesPreparedStatement_ t1 (toJava t2)
+
+--End Wrapper
 
 foreign import java unsafe "@interface setCharacterStream" setCharacterStreamPreparedStatement ::
 Int -> Reader -> Java PreparedStatement ()
