@@ -59,5 +59,8 @@ data {-# CLASS "java.sql.SQLWarning" #-} SQLWarning = SQLWarning (Object# SQLWar
 data {-# CLASS "java.sql.DatabaseMetaData" #-} DatabaseMetaData = DatabaseMetaData (Object# DatabaseMetaData)
   deriving Class
 
-  data {-# CLASS "java.sql.CallableStatement" #-} CallableStatement = CallableStatement (Object# CallableStatement)
-    deriving Class
+data {-# CLASS "java.sql.CallableStatement" #-} CallableStatement = CallableStatement (Object# CallableStatement)
+  deriving Class
+
+data {-# CLASS "java.sql.PreparedStatement" #-} PreparedStatement = PreparedStatement (Object# PreparedStatement)
+  deriving Class
