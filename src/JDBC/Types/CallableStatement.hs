@@ -1,4 +1,115 @@
 import JDBC.Types.CallableStatement
+  ( getArrayCallableStatement,
+    getArrayCallableStatement2,
+    getBigDecimalCallableStatement,
+    getBigDecimalCallableStatement2,
+    getBigDecimalCallableStatement3,
+    getBlobCallableStatement,
+    getBlobCallableStatement2,
+    getBooleanCallableStatement,
+    getBooleanCallableStatement2,
+    getByteCallableStatement,
+    getByteCallableStatement2,
+    getBytesCallableStatement,
+    getBytesCallableStatement2,
+    getCharacterStreamCallableStatement,
+    getCharacterStreamCallableStatement2,
+    getClobCallableStatement,
+    getClobCallableStatement2,
+    getDateCallableStatement,
+    getDateCallableStatement2,
+    getDateCallableStatement3,
+    getDateCallableStatement4,
+    getDoubleCallableStatement,
+    getDoubleCallableStatement2,
+    getFloatCallableStatement,
+    getFloatCallableStatement2,
+    getIntCallableStatement,
+    getIntCallableStatement2,
+    getLongCallableStatement,
+    getLongCallableStatement2,
+    getNCharacterStreamCallableStatement,
+    getNCharacterStreamCallableStatement2,
+    getNClobCallableStatement,
+    getNClobCallableStatement2,
+    getNStringCallableStatement,
+    getNStringCallableStatement2,
+    getObjectCallableStatement,
+    getObjectCallableStatement2,
+    getObjectCallableStatement3,
+    getObjectCallableStatement4,
+    getObjectCallableStatement5,
+    getObjectCallableStatement6,
+    getRefCallableStatement,
+    getRefCallableStatement2,
+    getRowIdCallableStatement,
+    getRowIdCallableStatement2,
+    getSQLXMLCallableStatement,
+    getSQLXMLCallableStatement2,
+    getStringCallableStatement,
+    getStringCallableStatement2,
+    getTimeCallableStatement,
+    getTimeCallableStatement2,
+    getTimeCallableStatement3,
+    getTimeCallableStatement4,
+    getTimestampCallableStatement,
+    getTimestampCallableStatement2,
+    getTimestampCallableStatement3,
+    getTimestampCallableStatement4,
+    getURLCallableStatement,
+    getURLCallableStatement2,
+    registerOutParameterCallableStatement,
+    registerOutParameterCallableStatement2,
+    registerOutParameterCallableStatement3,
+    registerOutParameterCallableStatement4,
+    registerOutParameterCallableStatement5,
+    registerOutParameterCallableStatement6,
+    setAsciiStreamCallableStatement,
+    setAsciiStreamCallableStatement2,
+    setAsciiStreamCallableStatement3,
+    setBinarySystemCallableStatement,
+    setBinarySystemCallableStatement2,
+    setBinarySystemCallableStatement3,
+    setBlobCallableStatement,
+    setBlobCallableStatement2,
+    setBooleanCallableStatement,
+    setByteCallableStatement,
+    setBytesCallableStatement,
+    setCharacterStreamCallableStatement,
+    setCharacterStreamCallableStatement2,
+    setCharacterStreamCallableStatement3,
+    setClobCallableStatement,
+    setClobCallableStatement2,
+    setClobCallableStatement3,
+    setDateCallableStatement,
+    setDateCallableStatement2,
+    setDoubleCallableStatement,
+    setFloatCallableStatement,
+    setIntCallableStatement,
+    setLongCallableStatement,
+    setNCharacterStreamCallableStatement,
+    setNCharacterStreamCallableStatement2,
+    setNClobCallableStatement,
+    setNClobCallableStatement2,
+    setNClobCallableStatement3,
+    setNStringCallableStatement,
+    setObjectCallableStatement,
+    setObjectCallableStatement2,
+    setObjectCallableStatement3,
+    setNullCallableStatement,
+    setNullCallableStatement2,
+    setRowIdCallableStatement,
+    setShortCallableStatement,
+    setSQLXMLCallableStatement,
+    setStringCallableStatement,
+    setTimeCallableStatement,
+    setTimeCallableStatement2,
+    setTimestampCallableStatement,
+    setTimestampCallableStatement2,
+    setURLCallableStatement,
+    wasNullCallableStatement
+    )
+where
 
 import Java
 
@@ -81,6 +192,9 @@ JString -> Calender -> Java CallableStatement Date
 
 foreign import java unsafe "@interface getDouble" getDoubleCallableStatement ::
 Int -> Java CallableStatement Double
+
+foreign import java unsafe "@interface getDouble" getDoubleCallableStatement2 ::
+JString -> Java CallableStatement Double
 
 foreign import java unsafe "@interface getFloat" getFloatCallableStatement ::
 Int -> Java CallableStatement Float
@@ -252,7 +366,7 @@ JString -> Blob -> Java CallableStatement ()
 foreign import java unsafe "@interface setBlob" setBlobCallableStatement2 ::
 JString -> InputStream -> Java CallableStatement ()
 
-foreign import java unsafe "@interface setBlob" setlobCallableStatement3 ::
+foreign import java unsafe "@interface setBlob" setBlobCallableStatement3 ::
 JString -> InputStream -> Int64 -> Java CallableStatement ()
 
 foreign import java unsafe "@interface setBoolean" setBooleanCallableStatement ::
