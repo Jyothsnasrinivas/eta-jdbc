@@ -35,11 +35,25 @@ Int -> Java CallableStatement Byte
 foreign import java unsafe "@interface getByte" getByteCallableStatement2 ::
 JString -> Java CallableStatement Byte
 
-foreign import java unsafe "@interface getBytes" getBytesCallableStatement ::
+foreign import java unsafe "@interface getBytes" getBytesCallableStatement_ ::
 Int -> Java CallableStatement JByteArray
 
-foreign import java unsafe "@interface getBytes" getBytesCallableStatement2 ::
+--Wrapper
+
+getBytesCallableStatement :: Int -> Java CallableStatement [Byte]
+getBytesCallableStatement t = fmap fromJava (getBytesCallableStatement_ t)
+
+--End Wrapper
+
+foreign import java unsafe "@interface getBytes" getBytesCallableStatement2_ ::
 JString -> Java CallableStatement JByteArray
+
+--Wrapper
+
+getBytesCallableStatement2 :: JString -> Java CallableStatement [Byte]
+getBytesCallableStatement2 t = fmap fromJava (getBytesCallableStatement2_ t)
+
+--End Wrapper
 
 foreign import java unsafe "@interface getCharacterStream" getCharacterStreamCallableStatement ::
 Int -> Java CallableStatement Reader
@@ -110,8 +124,15 @@ Int -> Java CallableStatement Object
 foreign import java unsafe "@interface getObject" getObjectCallableStatement2 :: (t <: Object)
 Int -> JClass t ->  Java CallableStatement t
 
-foreign import java unsafe "@interface getObject" getObjectCallableStatement3 ::
+foreign import java unsafe "@interface getObject" getObjectCallableStatement3_ ::
 Int -> Map JString (JClass b) -> Java CallableStatement Object
+
+--Wrapper
+
+getObjectCallableStatement3 :: Int -> [(JString, JClass b)] -> Java CallableStatement Object
+getObjectCallableStatement3 t1 t2 = getObjectCallableStatement3_ t1 (toJava t2)
+
+--End Wrapper
 
 foreign import java unsafe "@interface getObject" getObjectCallableStatement4 ::
 JString -> Java CallableStatement Object
@@ -119,8 +140,15 @@ JString -> Java CallableStatement Object
 foreign import java unsafe "@interface getObject" getObjectCallableStatement5 :: (t <: Object)
 JString -> JClass t ->  Java CallableStatement t
 
-foreign import java unsafe "@interface getObject" getObjectCallableStatement6 ::
+foreign import java unsafe "@interface getObject" getObjectCallableStatement6_ ::
 JString -> Map JString (JClass b) -> Java CallableStatement Object
+
+--Wrapper
+
+getObjectCallableStatement6 :: JString -> [(JString, JClass b)] -> Java CallableStatement Object
+getObjectCallableStatement6 t1 t2 = getObjectCallableStatement6_ t1 (toJava t2)
+
+--End Wrapper
 
 foreign import java unsafe "@interface getRef" getRefCallableStatement ::
 Int -> Java CallableStatement Ref
@@ -233,8 +261,15 @@ JString -> Bool -> Java CallableStatement ()
 foreign import java unsafe "@interface setByte" setByteCallableStatement ::
 JString -> Byte -> Java CallableStatement ()
 
-foreign import java unsafe "@interface setBytes" setBytesCallableStatement ::
+foreign import java unsafe "@interface setBytes" setBytesCallableStatement_ ::
 JString -> JByteArray -> Java CallableStatement ()
+
+--Wrapper
+
+setBytesCallableStatement :: JString -> [Byte] -> Java CallableStatement ()
+setBytesCallableStatement t1 t2 = getBytesCallableStatement_ t1 (toJava t2)
+
+--End Wrapper
 
 foreign import java unsafe "@interface setCharacterStream" setCharacterStreamCallableStatement ::
 JString -> Reader -> Java CallableStatement ()
