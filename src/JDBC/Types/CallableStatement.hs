@@ -181,3 +181,155 @@ Int -> Java CallableStatement URL
 
 foreign import java unsafe "@interface getURL" getURLCallableStatement2 ::
 JString -> Java CallableStatement URL
+
+foreign import java unsafe "@interface registerOutParameter" registerOutParameterCallableStatement ::
+Int -> Int -> Java CallableStatement ()
+
+foreign import java unsafe "@interface registerOutParameter" registerOutParameterCallableStatement2 ::
+Int -> Int -> Int -> Java CallableStatement ()
+
+foreign import java unsafe "@interface registerOutParameter" registerOutParameterCallableStatement3 ::
+Int -> Int -> JString -> Java CallableStatement ()
+
+foreign import java unsafe "@interface registerOutParameter" registerOutParameterCallableStatement4 ::
+JString -> Int -> Java CallableStatement ()
+
+foreign import java unsafe "@interface registerOutParameter" registerOutParameterCallableStatement5 ::
+JString -> Int -> Int -> Java CallableStatement ()
+
+foreign import java unsafe "@interface registerOutParameter" registerOutParameterCallableStatement6 ::
+JString -> Int -> JString -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setAsciiStream" setAsciiStreamCallableStatement ::
+JString -> InputStream -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setAsciiStream" setAsciiStreamCallableStatement2 ::
+JString -> InputStream -> Int -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setAsciiStream" setAsciiStreamCallableStatement3 ::
+JString -> InputStream -> Int64 -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setBinarySystem" setBinarySystemCallableStatement ::
+JString -> InputStream -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setBinarySystem" setBinarySystemCallableStatement2 ::
+JString -> InputStream -> Int -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setBinarySystem" setBinarySystemCallableStatement3 ::
+JString -> InputStream -> Int64 -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setBlob" setBlobCallableStatement ::
+JString -> Blob -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setBlob" setBlobCallableStatement2 ::
+JString -> InputStream -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setBlob" setlobCallableStatement3 ::
+JString -> InputStream -> Int64 -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setBoolean" setBooleanCallableStatement ::
+JString -> Bool -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setByte" setByteCallableStatement ::
+JString -> Byte -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setBytes" setBytesCallableStatement ::
+JString -> JByteArray -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setCharacterStream" setCharacterStreamCallableStatement ::
+JString -> Reader -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setCharacterStream" setCharacterStreamCallableStatement2 ::
+JString -> Reader -> Int -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setCharacterStream" setCharacterStreamCallableStatement3 ::
+JString -> Reader -> Int64 -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setClob" setClobCallableStatement ::
+JString -> Clob -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setClob" setClobCallableStatement2::
+JString -> Reader -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setClob" setClobCallableStatement3::
+JString -> Reader -> Int64 -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setDate" setDateCallableStatement ::
+JString -> Date -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setDate" setDateCallableStatement2 ::
+JString -> Date -> Calender -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setDouble" setDoubleCallableStatement ::
+JString -> Double -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setFloat" setFloatCallableStatement ::
+JString -> Float -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setInt" setIntCallableStatement ::
+JString -> Int -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setLong" setLongCallableStatement ::
+JString -> Int64 -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setNCharacterStream" setNCharacterStreamCallableStatement ::
+JString -> Reader -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setNCharacterStream" setNCharacterStreamCallableStatement2 ::
+JString -> Reader -> Int64 -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setNClob" setNClobCallableStatement ::
+JString -> NClob -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setNClob" setNClobCallableStatement2 ::
+JString -> Reader -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setNClob" setNClobCallableStatement3 ::
+JString -> Reader -> Int64 -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setNString" setNStringCallableStatement ::
+JString -> JString -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setNull" setNullCallableStatement ::
+JString -> Int -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setNull" setNullCallableStatement2 ::
+JString -> Int -> JString -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setObject" setObjectCallableStatement ::
+JString -> Object -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setObject" setObjectCallableStatement2 ::
+JString -> Object -> Int -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setObject" setObjectCallableStatement3 ::
+JString -> Object -> Int -> Int -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setRowId" setRowIdCallableStatement ::
+JString -> RowId -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setShort" setShortCallableStatement ::
+JString -> Short -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setSQLXML" setSQLXMLCallableStatement ::
+JString -> SQLXML -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setString" setStringCallableStatement ::
+JString -> JString -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setTime" setTimeCallableStatement ::
+JString -> Time -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setTime" setTimeCallableStatement2 ::
+JString -> Time -> Calender -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setTimestamp" setTimestampCallableStatement ::
+JString -> Timestamp -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setTimestamp" setTimestampCallableStatement2 ::
+JString -> Timestamp -> Calender -> Java CallableStatement ()
+
+foreign import java unsafe "@interface setURL" setURLCallableStatement ::
+JString -> URL -> Java CallableStatement ()
+
+foreign import java unsafe "@interface wasNull" wasNullCallableStatement :: Java CallableStatement Bool
