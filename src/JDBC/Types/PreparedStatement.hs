@@ -56,6 +56,7 @@ import JDBC.Types.PreparedStatement
 where
 
 import Java
+import JDBC.Types
 
 foreign import java unsafe "@interface addBatch" addBatchPreparedStatement :: Java PreparedStatement ()
 

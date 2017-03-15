@@ -1,6 +1,7 @@
 import JDBC.Types.DatabaseMetaData
 
 import Java
+import JDBC.Types
 
 foreign import java unsafe "@interface allProceduresAreCallable" allProceduresareCallableDatabaseMetaData ::
 Java DatabaseMetaData Bool

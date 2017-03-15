@@ -1,6 +1,7 @@
 import JDBC.Types.SQLData
 
 import Java
+import JDBC.Types
 
 foreign import java unsafe "@interface getSQLTypeName" getSQLTypeNameSQLData :: Java SQLData JString
 

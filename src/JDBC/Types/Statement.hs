@@ -44,6 +44,7 @@ import JDBC.Types.Statement
 where
 
 import Java
+import JDBC.Types
 
 foreign import java unsafe "@interface addBatch" addBatchStatement :: JString -> Java Statement ()
 

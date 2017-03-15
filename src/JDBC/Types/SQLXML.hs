@@ -1,6 +1,7 @@
 import JDBC.Types.SQLXML
 
 import Java
+import JDBC.Types
 
 foreign import java unsafe "@interface free" freeSQLXML :: Java SQLXML ()
 

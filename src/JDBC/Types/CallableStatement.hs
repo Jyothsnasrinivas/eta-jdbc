@@ -112,6 +112,7 @@ import JDBC.Types.CallableStatement
 where
 
 import Java
+import JDBC.Types
 
 foreign import java unsafe "@interface getArray" getArrayCallableStatement ::
 Int -> Java CallableStatement Array

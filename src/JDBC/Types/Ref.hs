@@ -6,6 +6,7 @@ import JDBC.Types.Ref
 where
 
 import Java
+import JDBC.Types
 
 foreign import java unsafe "@interface getBaseTypeName" getBaseTypeNameRef :: Java Ref JString
 

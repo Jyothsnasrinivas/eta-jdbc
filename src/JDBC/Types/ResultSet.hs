@@ -188,6 +188,7 @@ import JDBC.Types.ResultSet
 where
 
 import Java
+import JDBC.Types
 
 foreign import java unsafe "@interface absolute" absoluteResultSet :: Int -> Java ResultSet Bool
 

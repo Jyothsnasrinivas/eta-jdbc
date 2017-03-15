@@ -1,6 +1,7 @@
 import JDBC.Types.ParameterMetaData
 
 import Java
+import JDBC.Types
 
 foreign import java unsafe "@interface getParameterClassName" getParameterClassNameParameterMetaData ::
 Int -> Java ParameterMetaData JString

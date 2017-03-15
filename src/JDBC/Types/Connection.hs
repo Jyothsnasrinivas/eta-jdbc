@@ -53,6 +53,7 @@ import JDBC.Types.Connection
 where
 
 import Java
+import JDBC.Types
 
 foreign import java unsafe "@interface abort" abortConnection :: Executor -> Java Connection ()
 

@@ -13,6 +13,7 @@ module JDBC.Types.Array
 where
 
 import Java
+import JDBC.Types
 
 foreign import java unsafe "@interface free" free :: Java Array ()
 

@@ -1,6 +1,7 @@
 import JDBC.Types.Time
 
 import Java
+import JDBC.Types
 
 foreign import java unsafe "getDate" getDateTime :: Java Time Int
 

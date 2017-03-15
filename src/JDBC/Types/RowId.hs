@@ -6,6 +6,7 @@ import JDBC.Types.RowId
 where
 
 import Java
+import JDBC.Types
 
 foreign import java unsafe "@interface equals" equalsRowId_ :: Object -> Java RowId JBoolean
 

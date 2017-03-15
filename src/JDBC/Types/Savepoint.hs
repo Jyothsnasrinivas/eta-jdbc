@@ -1,6 +1,7 @@
 import JDBC.Types.Savepoint
 
 import Java
+import JDBC.Types
 
 foreign import java unsafe "@interface getSavepointId" getSavepointIdSavepoint :: Java Savepoint Int
 

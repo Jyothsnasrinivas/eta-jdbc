@@ -1,6 +1,7 @@
 import JDBC.Types.ResultSetMetaData
 
 import Java
+import JDBC.Types
 
 foreign import java unsafe "@interface getCatalogueName" getCatalogueNameResultSetMetaData ::
   Int -> Java ResultSetMetaData JString

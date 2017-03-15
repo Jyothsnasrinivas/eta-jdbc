@@ -29,6 +29,7 @@ import JDBC.Types.SQLInput
 where
 
 import Java
+import JDBC.Types
 
 foreign import java unsafe "@interface readArray" readArraySQLInput :: Java SQLInput Array
 

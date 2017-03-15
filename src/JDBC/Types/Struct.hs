@@ -1,6 +1,7 @@
 import JDBC.Types.Struct
 
 import Java
+import JDBC.Types
 
 foreign import java unsafe "@interface getAttributes" getAttributesStruct_ :: Java Struct JObjectArray
 

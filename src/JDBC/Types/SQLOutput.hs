@@ -28,6 +28,7 @@ import JDBC.Types.SQLOutput
 where
 
 import Java
+import JDBC.Types
 
 foreign import java unsafe "@interface writeArray" writeArraySQLOutput :: Array -> Java SQLOutput ()
 
