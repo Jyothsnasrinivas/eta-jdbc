@@ -64,3 +64,6 @@ data {-# CLASS "java.sql.CallableStatement" #-} CallableStatement = CallableStat
 
 data {-# CLASS "java.sql.PreparedStatement" #-} PreparedStatement = PreparedStatement (Object# PreparedStatement)
   deriving Class
+
+data {-# CLASS "java.sql.ParameterMetaData" #-} ParameterMetaData = ParameterMetaData (Object# ParameterMetaData)
+  deriving Class
