@@ -1,4 +1,59 @@
 import JDBC.Types.PreparedStatement
+  ( addBatchPreparedStatement,
+    clearParametersPreparedStatement,
+    executePreparedStatement,
+    executeQueryPreparedStatement,
+    executeUpdatePreparedStatement,
+    getMetaDataPreparedStatement,
+    getParameterMetaDataPreparedStatement,
+    setArrayPreparedStatement,
+    setAsciiStreamPreparedStatement,
+    setAsciiStreamPreparedStatement2,
+    setAsciiStreamPreparedStatement3,
+    setBigDecimalPreparedStatement,
+    setBinaryStreamPreparedStatement,
+    setBinaryStreamPreparedStatement2,
+    setBinaryStreamPreparedStatement3,
+    setBlobPreparedStatement,
+    setBlobPreparedStatement2,
+    setBlobPreparedStatement3,
+    setBooleanPreparedStatement,
+    setBytePreparedStatement,
+    setBytesPreparedStatement,
+    setCharacterStreamPreparedStatement,
+    setCharacterStreamPreparedStatement2,
+    setCharacterStreamPreparedStatement3,
+    setClobPreparedStatement,
+    setClobPreparedStatement2,
+    setClobPreparedStatement3,
+    setDatePreparedStatement,
+    setDatePreparedStatement2,
+    setDoublePreparedStatement,
+    setFloatPreparedStatement,
+    setIntPreparedStatement,
+    setLongPreparedStatement,
+    setNCharacterStreamPreparedStatement,
+    setNCharacterStreamPreparedStatement2,
+    setNClobPreparedStatement,
+    setNClobPreparedStatement2,
+    setNClobPreparedStatement3,
+    setNullPreparedStatement,
+    setNullPreparedStatement2,
+    setObjectPreparedStatement,
+    setObjectPreparedStatement2,
+    setObjectPreparedStatement3,
+    setRefPreparedStatement,
+    setRowIdPreparedStatement,
+    setShortPreparedStatement,
+    setSQLXMLPreparedStatement,
+    setStringPreparedStatement,
+    setTimePreparedStatement,
+    setTimePreparedStatement2,
+    setTimestampPreparedStatement,
+    setTimestampPreparedStatement2,
+    setUnicodeStreamPreparedStatement,
+    setURLPreparedStatement)
+where
 
 import Java
 
@@ -40,7 +95,7 @@ Int -> InputStream -> Int -> Java PreparedStatement ()
 foreign import java unsafe "@interface setBinaryStream" setBinaryStreamPreparedStatement3 ::
 Int -> InputStream -> Int64 -> Java PreparedStatement ()
 
-foreign import java unsafe "@interface setBlob" setBlobStreamPreparedStatement ::
+foreign import java unsafe "@interface setBlob" setBlobPreparedStatement ::
 Int -> Blob -> Java PreparedStatement ()
 
 foreign import java unsafe "@interface setBlob" setBlobPreparedStatement2 ::
