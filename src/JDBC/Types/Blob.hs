@@ -13,6 +13,7 @@ module JDBC.Types.Blob
 where
 
 import Java
+import Java.IO
 import JDBC.Types
 
 foreign import java unsafe "@interface free" freeBlob :: Java Blob () --Todo
