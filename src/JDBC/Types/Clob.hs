@@ -15,6 +15,7 @@ module JDBC.Types.Clob
 where
 
 import Java
+import Java.IO
 import JDBC.Types
 
 foreign import java unsafe "@interface free" freeClob :: Java Clob ()
