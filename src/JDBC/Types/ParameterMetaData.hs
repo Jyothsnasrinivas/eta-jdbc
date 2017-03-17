@@ -1,4 +1,4 @@
-import JDBC.Types.ParameterMetaData
+module JDBC.Types.ParameterMetaData where
 
 import Java
 import JDBC.Types

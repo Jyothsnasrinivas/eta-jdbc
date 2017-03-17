@@ -1,5 +1,7 @@
 {-# LANGUAGE #-}
 
+module JDBC.Types
+
 import Java
 
 data {-# CLASS "java.sql.Array" #-} Array = Array (Object# Array)

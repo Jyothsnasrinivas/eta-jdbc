@@ -1,4 +1,4 @@
-import JDBC.Types.Timestamp
+module JDBC.Types.Timestamp where
 
 import Java
 import JDBC.Types

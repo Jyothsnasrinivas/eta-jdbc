@@ -1,4 +1,4 @@
-import JDBC.Types.DatabaseMetaData
+module JDBC.Types.DatabaseMetaData where
 
 import Java
 import JDBC.Types

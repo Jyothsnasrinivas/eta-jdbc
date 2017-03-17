@@ -1,4 +1,4 @@
-import JDBC.Types.Statement
+module JDBC.Types.Statement
   ( addBatchStatement,
     cancelStatement,
     clearBatchStatement,

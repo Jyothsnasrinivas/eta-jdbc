@@ -1,4 +1,4 @@
-import JDBC.Types.SQLWarning
+module JDBC.Types.SQLWarning
 
 import Java
 import JDBC.Types

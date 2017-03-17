@@ -1,4 +1,4 @@
-import JDBC.Types.CallableStatement
+module JDBC.Types.CallableStatement
   ( getArrayCallableStatement,
     getArrayCallableStatement2,
     getBigDecimalCallableStatement,

@@ -1,4 +1,4 @@
-import JDBC.Types.SQLData
+module JDBC.Types.SQLData where
 
 import Java
 import JDBC.Types

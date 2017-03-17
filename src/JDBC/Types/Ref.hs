@@ -1,4 +1,4 @@
-import JDBC.Types.Ref
+module JDBC.Types.Ref
   ( getBaseTypeNameRef,
     getObjectRef,
     getObjectRef2,

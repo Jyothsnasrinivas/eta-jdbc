@@ -1,4 +1,4 @@
-import JDBC.Types.SQLXML
+module JDBC.Types.SQLXML where
 
 import Java
 import JDBC.Types

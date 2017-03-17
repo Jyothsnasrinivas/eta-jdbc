@@ -1,4 +1,4 @@
-import JDBC.Types.SQLOutput
+module JDBC.Types.SQLOutput
   ( writeArraySQLOutput,
     writeAsciiStreamSQLOutput,
     writeBigDecimalSQLOutput,

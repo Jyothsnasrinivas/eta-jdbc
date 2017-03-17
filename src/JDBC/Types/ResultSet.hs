@@ -1,4 +1,4 @@
-import JDBC.Types.ResultSet
+module JDBC.Types.ResultSet
   ( absoluteResultSet,
     afterLastResultSet,
     beforeFirstResultSet,

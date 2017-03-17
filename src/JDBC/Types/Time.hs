@@ -1,4 +1,4 @@
-import JDBC.Types.Time
+module JDBC.Types.Time where
 
 import Java
 import JDBC.Types

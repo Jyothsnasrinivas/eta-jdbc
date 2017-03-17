@@ -1,4 +1,4 @@
-import JDBC.Types.RowId
+module JDBC.Types.RowId
   (equalsRowId,
    getBytesRowId2,
    hashcodeRowId,

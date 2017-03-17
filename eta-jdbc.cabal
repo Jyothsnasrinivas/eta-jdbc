@@ -19,14 +19,23 @@ library
   exposed-modules:    JDBC.Types.Array
                       JDBC.Types.Blob
                       JDBC.Types.Clob
+                      JDBC.Types.CallableStatement
+                      JDBC.Types.Connection
+                      JDBC.Types.DatabaseMetaData
+                      JDBC.Types.ParameterMetaData
                       JDBC.Types.Ref
+                      JDBC.Types.ResultSet
+                      JDBC.Types.ResultSetMetaData
                       JDBC.Types.RowId
+                      JDBC.Types.Savepoint
                       JDBC.Types.SQLData
                       JDBC.Types.SQLInput
                       JDBC.Types.SQLOutput
                       JDBC.Types.SQLXML
                       JDBC.Types.Statement
                       JDBC.Types.Struct
+                      JDBC.Types.Time
+                      JDBC.Types.Timestamp
                       JDBC.Types
 
   -- other-modules:

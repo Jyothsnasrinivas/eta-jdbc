@@ -1,4 +1,4 @@
-import JDBC.Types.Struct
+module JDBC.Types.Struct where
 
 import Java
 import JDBC.Types

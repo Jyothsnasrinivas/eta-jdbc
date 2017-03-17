@@ -1,4 +1,4 @@
-import JDBC.Types.SQLInput
+module JDBC.Types.SQLInput
   ( readArraySQLInput,
     readAsciiStreamSQLInput,
     readBigDecimalSQLInput,

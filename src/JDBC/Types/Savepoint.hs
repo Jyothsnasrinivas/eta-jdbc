@@ -1,4 +1,4 @@
-import JDBC.Types.Savepoint
+module JDBC.Types.Savepoint where
 
 import Java
 import JDBC.Types

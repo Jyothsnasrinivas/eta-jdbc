@@ -1,4 +1,4 @@
-import JDBC.Types.ResultSetMetaData
+module JDBC.Types.ResultSetMetaData where
 
 import Java
 import JDBC.Types

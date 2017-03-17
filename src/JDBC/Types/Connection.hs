@@ -1,4 +1,4 @@
-import JDBC.Types.Connection
+module JDBC.Types.Connection
   (abortConnection,
    clearWarningsConnection,
    closeConnection,

@@ -1,4 +1,4 @@
-import JDBC.Types.PreparedStatement
+module JDBC.Types.PreparedStatement
   ( addBatchPreparedStatement,
     clearParametersPreparedStatement,
     executePreparedStatement,
