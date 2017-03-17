@@ -1,6 +1,7 @@
-{-# LANGUAGE #-}
+{-# LANGUAGE NoImplicitPrelude, MagicHash, ScopedTypeVariables, KindSignatures,
+             UnboxedTuples, FlexibleContexts, UnliftedFFITypes #-}
 
-module JDBC.Types
+module JDBC.Types where
 
 import Java
 
@@ -11,6 +12,9 @@ data {-# CLASS "java.sql.Blob" #-} Blob = Blob (Object# Blob)
   deriving Class
 
 data {-# CLASS "java.sql.Clob" #-} Clob = Clob (Object# Clob)
+  deriving Class
+
+data {-# CLASS "java.sql.NClob" #-} NClob = NClob (Object# NClob)
   deriving Class
 
 data {-# CLASS "java.sql.Ref" #-} Ref = Ref (Object# Ref)
