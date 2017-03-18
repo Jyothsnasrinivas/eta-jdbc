@@ -188,6 +188,10 @@ module JDBC.Types.ResultSet
 where
 
 import Java
+import Java.DateTime
+import Java.IO
+import Java.Math
+import Java.Net
 import JDBC.Types
 
 foreign import java unsafe "@interface absolute" absoluteResultSet :: Int -> Java ResultSet Bool
@@ -272,7 +276,7 @@ foreign import java unsafe "@interface getCursorName" getCursorNameResultSet :: 
 
 foreign import java unsafe "@interface getDate" getDateResultSet :: Int -> Java ResultSet Date
 
-foreign import java unsafe "@interface getDate" getDateResultSet2 :: Int -> Calender -> Java ResultSet Date
+foreign import java unsafe "@interface getDate" getDateResultSet2 :: Int -> Calendar -> Java ResultSet Date
 
 foreign import java unsafe "@interface getDouble" getDoubleResultSet :: Int -> Java ResultSet Double
 
@@ -296,7 +300,7 @@ foreign import java unsafe "@interface getLong" getLongResultSet :: Int -> Java 
 
 foreign import java unsafe "@interface getLong" getLongResultSet2 :: JString -> Java ResultSet Int64
 
-foreign import java unsafe "@interface getMetaData" getIntResultSet :: Java ResultSet ResultMetaData
+foreign import java unsafe "@interface getMetaData" getMetaDataResultSet :: Java ResultSet ResultSetMetaData
 
 foreign import java unsafe "@interface getNCharacterStream" getNCharaterStreamResultSet :: Int -> Java ResultSet Reader
 
@@ -313,15 +317,15 @@ foreign import java unsafe "@interface getNString" getNStringResultSet2 :: JStri
 foreign import java unsafe "@interface getObject" getObjectResultSet :: Int -> Java ResultSet Object
 
 foreign import java unsafe "@interface getObject" getObjectResultSet2 :: (t <: Object)
-                                                                      => Int -> Class t -> Java ResultSet t
+                                                                      => Int -> JClass t -> Java ResultSet t
 
 foreign import java unsafe "@interface getObject" getObjectResultSet3_ :: Int -> Map JString (JClass b)
                                                                       -> Java ResultSet Object
 
 --Wrapper
 
-getObjectResultSet3 :: Int -> [(JString, JClass b)] -> Java ResultSet Object
-getObjectResultSet3 t1 t2 = getObjectResultSet3_ t1 (toJava t2)
+getObjectResultSet3 :: forall b. Int -> [(JString, JClass b)] -> Java ResultSet Object
+getObjectResultSet3 t1 t2 = getObjectResultSet3_ t1 (toJava t2 :: Map JString (JClass b))
 
 --End Wrapper
 
@@ -334,8 +338,8 @@ foreign import java unsafe "@interface getObject" getObjectResultSet6_ :: JStrin
 
 --Wrapper
 
-getObjectResultSet6 :: JString -> [(JString, JClass b)] -> Java ResultSet Object
-getObjectResultSet6 t1 t2 = getObjectResultSet6_ t1 (toJava t2)
+getObjectResultSet6 :: forall b. JString -> [(JString, JClass b)] -> Java ResultSet Object
+getObjectResultSet6 t1 t2 = getObjectResultSet6_ t1 (toJava t2 :: Map JString (JClass b))
 
 --End Wrapper
 
@@ -365,19 +369,19 @@ foreign import java unsafe "@interface getString" getStringResultSet2 :: JString
 
 foreign import java unsafe "@interface getTime" getTimeResultSet :: Int -> Java ResultSet Time
 
-foreign import java unsafe "@interface getTime" getTimeResultSet2 :: Int -> Calender -> Java ResultSet Time
+foreign import java unsafe "@interface getTime" getTimeResultSet2 :: Int -> Calendar -> Java ResultSet Time
 
 foreign import java unsafe "@interface getTime" getTimeResultSet3 :: JString -> Java ResultSet Time
 
-foreign import java unsafe "@interface getTime" getTimeResultSet4 :: JString -> Calender -> Java ResultSet Time
+foreign import java unsafe "@interface getTime" getTimeResultSet4 :: JString -> Calendar -> Java ResultSet Time
 
 foreign import java unsafe "@interface getTimestamp" getTimestampResultSet :: Int -> Java ResultSet Timestamp
 
-foreign import java unsafe "@interface getTimestamp" getTimestampResultSet2 :: Int -> Calender -> Java ResultSet Timestamp
+foreign import java unsafe "@interface getTimestamp" getTimestampResultSet2 :: Int -> Calendar -> Java ResultSet Timestamp
 
 foreign import java unsafe "@interface getTimestamp" getTimestampResultSet3 :: JString -> Java ResultSet Timestamp
 
-foreign import java unsafe "@interface getTimestamp" getTimestampResultSet4 :: JString -> Calender -> Java ResultSet Timestamp
+foreign import java unsafe "@interface getTimestamp" getTimestampResultSet4 :: JString -> Calendar -> Java ResultSet Timestamp
 
 foreign import java unsafe "@interface getType" getTypeResultSet :: Java ResultSet Int
 

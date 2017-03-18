@@ -28,6 +28,10 @@ module JDBC.Types.SQLOutput
 where
 
 import Java
+import Java.DateTime
+import Java.IO
+import Java.Math
+import Java.Net
 import JDBC.Types
 
 foreign import java unsafe "@interface writeArray" writeArraySQLOutput :: Array -> Java SQLOutput ()
@@ -77,7 +81,7 @@ foreign import java unsafe "@interface writeRowId" writeRowIdSQLOutput :: RowId 
 
 foreign import java unsafe "@interface writeShort" writeShortSQLOutput :: Short -> Java SQLOutput ()
 
-foreign import java unsafe "@interface writeSQLXML" writeSQLXMLSQLOutput :: SQLSML -> Java SQLOutput ()
+foreign import java unsafe "@interface writeSQLXML" writeSQLXMLSQLOutput :: SQLXML -> Java SQLOutput ()
 
 foreign import java unsafe "@interface writeString" writeStringSQLOutput :: JString -> Java SQLOutput ()
 

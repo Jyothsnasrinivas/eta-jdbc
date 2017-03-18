@@ -12,7 +12,7 @@ foreign import java unsafe "@interface equals" equalsRowId_ :: Object -> Java Ro
 
 --Wrapper
 
-equalsRowId :: Object -> Java RowId JBoolean
+equalsRowId :: Object -> Java RowId Bool
 equalsRowId t = fmap fromJava (equalsRowId_ t)
 
 --End Wrapper

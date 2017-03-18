@@ -248,8 +248,8 @@ foreign import java unsafe "@interface getObject" getObjectCallableStatement3_ :
 
 --Wrapper
 
-getObjectCallableStatement3 :: Int -> [(JString, JClass b)] -> Java CallableStatement Object
-getObjectCallableStatement3 t1 t2 = getObjectCallableStatement3_ t1 (toJava t2)
+getObjectCallableStatement3 :: forall b. Int -> [(JString, JClass b)] -> Java CallableStatement Object
+getObjectCallableStatement3 t1 t2 = getObjectCallableStatement3_ t1 (toJava t2 :: Map JString (JClass b))
 
 --End Wrapper
 
@@ -264,8 +264,8 @@ foreign import java unsafe "@interface getObject" getObjectCallableStatement6_ :
 
 --Wrapper
 
-getObjectCallableStatement6 :: JString -> [(JString, JClass b)] -> Java CallableStatement Object
-getObjectCallableStatement6 t1 t2 = getObjectCallableStatement6_ t1 (toJava t2)
+getObjectCallableStatement6 :: forall b. JString -> [(JString, JClass b)] -> Java CallableStatement Object
+getObjectCallableStatement6 t1 t2 = getObjectCallableStatement6_ t1 (toJava t2 :: Map JString (JClass b))
 
 --End Wrapper
 
@@ -386,7 +386,7 @@ foreign import java unsafe "@interface setBytes" setBytesCallableStatement_ ::
 --Wrapper
 
 setBytesCallableStatement :: JString -> [Byte] -> Java CallableStatement ()
-setBytesCallableStatement t1 t2 = getBytesCallableStatement_ t1 (toJava t2)
+setBytesCallableStatement t1 t2 = setBytesCallableStatement_ t1 (toJava t2)
 
 --End Wrapper
 

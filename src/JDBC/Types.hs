@@ -73,3 +73,6 @@ data {-# CLASS "java.sql.PreparedStatement" #-} PreparedStatement = PreparedStat
 
 data {-# CLASS "java.sql.ParameterMetaData" #-} ParameterMetaData = ParameterMetaData (Object# ParameterMetaData)
   deriving Class
+
+data {-# CLASS "java.sql.RowIdLifetime" #-} RowIdLifetime = RowIdLifetime (Object# RowIdLifetime)
+  deriving Class

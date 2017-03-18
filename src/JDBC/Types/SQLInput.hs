@@ -29,6 +29,10 @@ module JDBC.Types.SQLInput
 where
 
 import Java
+import Java.DateTime
+import Java.IO
+import Java.Math
+import Java.Net
 import JDBC.Types
 
 foreign import java unsafe "@interface readArray" readArraySQLInput :: Java SQLInput Array
@@ -45,7 +49,7 @@ foreign import java unsafe "@interface readBoolean" readBooleanSQLInput_ :: Java
 
 --Wrapper
 
-readBooleanSQLInput :: Java SQLInput JBoolean
+readBooleanSQLInput :: Java SQLInput Bool
 readBooleanSQLInput = fmap fromJava (readBooleanSQLInput_)
 
 --End Wrapper
@@ -86,7 +90,7 @@ foreign import java unsafe "@interface readRef" readRefSQLInput :: Java SQLInput
 
 foreign import java unsafe "@interface readRowId" readRowIdSQLInput :: Java SQLInput RowId
 
-foreign import java unsafe "@interface readShort" readShortSQLInput :: Java SQLInput short
+foreign import java unsafe "@interface readShort" readShortSQLInput :: Java SQLInput Short
 
 foreign import java unsafe "@interface readSQLXML" readSQLXMLSQLInput :: Java SQLInput SQLXML
 
@@ -102,7 +106,7 @@ foreign import java unsafe "@interface wasNull" wasNullSQLInput_ :: Java SQLInpu
 
 --Wrapper
 
-wasNullSQLInput :: Java SQLInput JBoolean
+wasNullSQLInput :: Java SQLInput Bool
 wasNullSQLInput = fmap fromJava (wasNullSQLInput_)
 
 --End Wrapper

@@ -16,8 +16,8 @@ foreign import java unsafe "@interface getObject" getObjectRef2_ :: Map JString 
 
 --Wrapper
 
-getObjectRef2 :: [(JString, JClass b)] -> Java Ref Object
-getObjectRef2 t = getObjectRef2_ (toJava t)
+getObjectRef2 :: forall b. [(JString, JClass b)] -> Java Ref Object
+getObjectRef2 t = getObjectRef2_ (toJava t :: Map JString (JClass b))
 
 --End Wrapper
 

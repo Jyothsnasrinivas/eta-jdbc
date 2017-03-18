@@ -53,7 +53,9 @@ module JDBC.Types.Connection
 where
 
 import Java
+import Java.Array
 import JDBC.Types
+import Java.Concurrent
 
 foreign import java unsafe "@interface abort" abortConnection :: Executor -> Java Connection ()
 
@@ -64,7 +66,7 @@ foreign import java unsafe "@interface close" closeConnection :: Java Connection
 foreign import java unsafe "@interface commit" commitConnection :: Java Connection ()
 
 foreign import java unsafe "@interface createArrayOf" createArrayOfConnection ::
-JString -> JObjectArray -> Java Connection Array
+  JString -> JObjectArray -> Java Connection Array
 
 foreign import java unsafe "@interface createBlob" createBlobConnection :: Java Connection Blob
 
@@ -77,10 +79,10 @@ foreign import java unsafe "@interface createSQLXML" createSQLXMLConnection :: J
 foreign import java unsafe "@interface createStatement" createStatementConnection :: Java Connection Statement
 
 foreign import java unsafe "@interface createStatement" createStatementConnection2 ::
-Int -> Int -> Java Connection Statement
+  Int -> Int -> Java Connection Statement
 
 foreign import java unsafe "@interface createStatement" createStatementConnection3 ::
-Int -> Int -> Int -> Java Connection Statement
+  Int -> Int -> Int -> Java Connection Statement
 
 foreign import java unsafe "@interface createStruct" createStructConnection_ ::
   JString -> JObjectArray -> Java Connection Struct
@@ -108,7 +110,7 @@ foreign import java unsafe "@interface getSchema" getSchemaConnection :: Java Co
 
 foreign import java unsafe "@interface getTransactionIsolation" getTransactionIsolationConnection :: Java Connection Int
 
-foreign import java unsafe "@interface getTypeMap" getTypeMapConnection :: Java Connection Map JString (JClass b)
+foreign import java unsafe "@interface getTypeMap" getTypeMapConnection :: Java Connection (Map JString (JClass b))
 
 foreign import java unsafe "@interface getWarnings" getWarningsConnection :: Java Connection SQLWarning
 
@@ -129,13 +131,13 @@ foreign import java unsafe "@interface prepareCall" prepareCallConnection3 ::
   JString -> Int -> Int -> Int -> Java Connection CallableStatement
 
 foreign import java unsafe "@interface prepareStatement" prepareStatementConnection ::
-JString -> Java Connection PreparedStatement
+  JString -> Java Connection PreparedStatement
 
 foreign import java unsafe "@interface prepareStatement" prepareStatementConnection2 ::
-JString -> Int -> Java Connection PreparedStatement
+  JString -> Int -> Java Connection PreparedStatement
 
 foreign import java unsafe "@interface prepareStatement" prepareStatementConnection3_ ::
-JString -> Int -> JIntArrray -> Java Connection PreparedStatement
+  JString -> Int -> JIntArray -> Java Connection PreparedStatement
 
 --Wrapper
 
@@ -145,13 +147,13 @@ prepareStatementConnection3 t1 t2 t3 = prepareStatementConnection3_ t1 t2 (toJav
 --End Wrapper
 
 foreign import java unsafe "@interface prepareStatement" prepareStatementConnection4 ::
-JString -> Int -> Int -> Java Connection PreparedStatement
+  JString -> Int -> Int -> Java Connection PreparedStatement
 
 foreign import java unsafe "@interface prepareStatement" prepareStatementConnection5 ::
-JString -> Int -> Int -> Int -> Java Connection PreparedStatement
+  JString -> Int -> Int -> Int -> Java Connection PreparedStatement
 
 foreign import java unsafe "@interface prepareStatement" prepareStatementConnection6_ ::
-JString -> JStringArray -> Java Connection PreparedStatement
+  JString -> JStringArray -> Java Connection PreparedStatement
 
 --Wrapper
 
@@ -187,13 +189,13 @@ foreign import java unsafe "@interface setSavepoint" setSavepointConnection2 :: 
 foreign import java unsafe "@interface setSchema" setSchemaConnection :: JString -> Java Connection ()
 
 foreign import java unsafe "@interface setTransactionIsolation" setTransactionIsolationConnection ::
-Int -> Java Connection ()
+  Int -> Java Connection ()
 
 foreign import java unsafe "@interface setTypeMap" setTypeMapConnection_ :: Map JString (JClass b) -> Java Connection ()
 
 --Wrapper
 
-setTypeMapConnection :: [(JString, JClass b)] -> Java Connection ()
-setTypeMapConnection t = setTypeMapConnection_ (toJava t)
+setTypeMapConnection :: forall b. [(JString, JClass b)] -> Java Connection ()
+setTypeMapConnection t = setTypeMapConnection_ (toJava t :: Map JString (JClass b))
 
 --End Wrapper
