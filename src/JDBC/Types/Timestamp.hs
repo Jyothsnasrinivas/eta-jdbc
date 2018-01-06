@@ -1,7 +1,7 @@
 module JDBC.Types.Timestamp where
 
 import Java
-import Java.DateTime
+import Interop.Java.DateTime
 import JDBC.Types
 
 foreign import java unsafe "after" afterTimestamp :: Timestamp -> Java Timestamp Bool

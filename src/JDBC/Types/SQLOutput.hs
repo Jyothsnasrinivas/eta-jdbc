@@ -28,10 +28,10 @@ module JDBC.Types.SQLOutput
 where
 
 import Java
-import Java.DateTime
-import Java.IO
+import Interop.Java.DateTime
+import Interop.Java.IO
 import Java.Math
-import Java.Net
+import Interop.Java.Net
 import JDBC.Types
 
 foreign import java unsafe "@interface writeArray" writeArraySQLOutput :: Array -> Java SQLOutput ()
